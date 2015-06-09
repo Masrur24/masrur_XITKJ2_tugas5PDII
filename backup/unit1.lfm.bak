@@ -1,0 +1,157 @@
+object Form1: TForm1
+  Left = 268
+  Height = 564
+  Top = 117
+  Width = 650
+  Caption = 'info'
+  ClientHeight = 564
+  ClientWidth = 650
+  LCLVersion = '1.2.6.0'
+  object DBGrid1: TDBGrid
+    Left = 32
+    Height = 192
+    Top = 80
+    Width = 552
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object Nama: TEdit
+    Left = 35
+    Height = 23
+    Top = 376
+    Width = 157
+    TabOrder = 1
+  end
+  object NIS: TEdit
+    Left = 35
+    Height = 23
+    Top = 312
+    Width = 160
+    OnChange = NISChange
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 35
+    Height = 15
+    Top = 288
+    Width = 18
+    Caption = 'NIS'
+    ParentColor = False
+    OnClick = Label1Click
+  end
+  object Label2: TLabel
+    Left = 35
+    Height = 15
+    Top = 352
+    Width = 64
+    Caption = 'Nama Siswa'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 304
+    Height = 15
+    Top = 288
+    Width = 27
+    Caption = 'Kelas'
+    ParentColor = False
+  end
+  object Kelas: TEdit
+    Left = 304
+    Height = 23
+    Top = 312
+    Width = 160
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 304
+    Height = 15
+    Top = 352
+    Width = 34
+    Caption = 'E-mail'
+    ParentColor = False
+  end
+  object email: TEdit
+    Left = 304
+    Height = 23
+    Top = 376
+    Width = 160
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 35
+    Height = 25
+    Top = 462
+    Width = 123
+    Caption = 'Input'
+    OnClick = Button1Click
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 184
+    Height = 25
+    Top = 462
+    Width = 123
+    Caption = 'Edit'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 360
+    Height = 25
+    Top = 462
+    Width = 123
+    Caption = 'Hapus'
+    OnClick = Button3Click
+    TabOrder = 7
+  end
+  object Button4: TButton
+    Left = 504
+    Height = 25
+    Top = 462
+    Width = 123
+    Caption = 'Keluar'
+    OnClick = Button4Click
+    TabOrder = 8
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'tugaspd'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'C:\xampp\mysql\lib\libmysql.dll'
+    left = 488
+    top = 304
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from siswasiswi'
+    )
+    Params = <>
+    left = 488
+    top = 368
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection1
+    Params = <>
+    left = 536
+    top = 304
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 536
+    top = 368
+  end
+end
